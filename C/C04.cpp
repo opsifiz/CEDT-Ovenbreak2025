@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#define inf 1e18
+#define int long long
+#define var double
+using namespace std;
+
+const int N = 1e6;
+
+set<int> p;
+int vis[N+5];
+
+void init(){
+    for(int i=2;i<=N;i++){
+        if(vis[i]) continue;
+        p.insert(i);
+        for(int j=i*i;j<=N;j+=i){
+            vis[j] = 1;
+        }
+    }
+}
+
+int a[N+5], mx = -inf, mn = inf;
+var sum = 0;
+
+int32_t main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    // init();
+    int n; cin>>n;
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+            cout<<i<<' ';
+        }
+    }
+}
