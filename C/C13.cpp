@@ -19,8 +19,12 @@ void mains(){
     int l = 0, r = 0;
     for(int i=1;i<=n;i++){
         cin>>v[i][0]>>v[i][1];
-        if(v[i][aa]>0){te--; vis[i][aa]=1; resA = ((resA%mod)+(v[i][aa]%mod))%mod;}
-        if(v[i][bb]>0){mp--; vis[i][bb]=1; resB = ((resB%mod)*(v[i][bb]%mod))%mod;}
+
+        vis[i][aa]=1;
+        vis[i][bb]=1;
+
+        if(v[i][aa]>0){te--; resA = ((resA%mod)+(v[i][aa]%mod))%mod;}
+        if(v[i][bb]>0){mp--; resB = ((resB%mod)*(v[i][bb]%mod))%mod;}
         if(te == 0){aa ^= 1; te = a;}
         if(mp == 0){bb ^= 1; mp = b;}
         if(!vis[i][0]) l += 1;
